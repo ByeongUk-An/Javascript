@@ -10,20 +10,18 @@
   <body>
     <div class="alert-box">
       Alert 박스
-      <button
-        class="close"
-        onclick="document.querySelector('.alert-box').style.display='none'"
-      >
-        닫기</button
-      >
+      <button class="close" onclick="clickbtn()">닫기</button>
     </div>
-    <button
-      id="btn"
-      onclick="document.querySelector('.alert-box').style.display='block'"
-    >
-      버튼
-    </button>
+    <button id="btn" onclick="openbtn()">버튼</button>
 
-    <script></script>
+    <script>
+      function clickbtn() {
+        document.querySelector(".alert-box").style.display = "none";
+      }
+
+      function openbtn() {
+        document.querySelector(".alert-box").style.display = "block";
+      }
+    </script>
   </body>
 </html>
