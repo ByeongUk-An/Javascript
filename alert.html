@@ -9,19 +9,40 @@
   </head>
   <body>
     <div class="alert-box">
-      Alert 박스
-      <button class="close" onclick="clickbtn()">닫기</button>
+      <p>아이디를 입력하세요</p>
+      <button class="close" onclick="btnEvent1('none')">닫기</button>
     </div>
-    <button id="btn" onclick="openbtn()">버튼</button>
 
+    <button id="btn" onclick="btn1('block')">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <!-- onclick="btn2('block')" -->
     <script>
-      function clickbtn() {
-        document.querySelector(".alert-box").style.display = "none";
-      }
+      //   function clickbtn() {
+      //     document.querySelector(".alert-box").style.display = "none";
+      //   }
 
-      function openbtn() {
-        document.querySelector(".alert-box").style.display = "block";
+      //   function openbtn() {
+      //     document.querySelector(".alert-box").style.display = "block";
+      //   }
+
+      function btnEvent1(a) {
+        document.querySelector(".alert-box").style.display = a;
       }
+      function btn1(a) {
+        document.querySelector(".alert-box").style.display = a;
+        document.querySelector(".alert-box").innerHTML = "아이디를 입력하세요";
+      }
+      //   function btn2(a) {
+      //     document.querySelector(".alert-box").style.display = a;
+      //     document.querySelector(".alert-box").innerHTML =
+      //       "비밀번호를 입력하세요";
+      //   }
+
+      document.getElementById("btn2").addEventListener("click", function () {
+        document.querySelector(".alert-box").style.display = "block";
+        document.querySelector(".alert-box").innerHTML =
+          "비밀번호를 입력하세요";
+      });
     </script>
   </body>
 </html>
