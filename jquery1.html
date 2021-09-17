@@ -27,7 +27,27 @@
     <div class="black-background">
       <div class="white-background">
         <p>로그인하세요</p>
-        <button type="button" class="btn btn-primary btn-close">Primary</button>
+        <form action="login.php" id="form-submit">
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              id="email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary" id="sumbit-btn">
+            전송
+          </button>
+          <button type="button" class="btn btn-primary btn-close">닫기</button>
+        </form>
       </div>
     </div>
 
@@ -60,13 +80,18 @@
       >
     </div>
 
-    <input type="text" id="test-input" />
+    <!-- <input type="text" id="test-input" /> -->
 
     <script>
-      $("#login").on("click", function () {
-        if ($("#test-input").val() === "안녕") {
-          $(".black-background").fadeIn();
+      $("submit-btn").on("submit", function () {
+        if ($("#email").val() === "") {
+          console.log("ewafeaw");
         }
+      });
+
+      //   $(".black-background").fadeIn();
+      $("#login").on("click", function () {
+        $(".black-background").fadeIn();
       });
 
       $(".nav-products").click(function () {
