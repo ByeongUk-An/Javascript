@@ -60,9 +60,13 @@
       >
     </div>
 
+    <input type="text" id="test-input" />
+
     <script>
       $("#login").on("click", function () {
-        $(".black-background").fadeIn();
+        if ($("#test-input").val() === "안녕") {
+          $(".black-background").fadeIn();
+        }
       });
 
       $(".nav-products").click(function () {
