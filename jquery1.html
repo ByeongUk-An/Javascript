@@ -27,7 +27,7 @@
     <div class="black-background">
       <div class="white-background">
         <p>로그인하세요</p>
-        <form action="login.php" id="form-submit">
+        <form action="#" id="form-submit">
           <div class="form-group">
             <input
               type="email"
@@ -35,15 +35,18 @@
               placeholder="Email"
               id="email"
             />
+            <p id="email-alert">이메일이 빈칸입니다.</p>
           </div>
           <div class="form-group">
             <input
               type="password"
               class="form-control"
               placeholder="Password"
+              id="psw"
             />
+            <p id="psw-alert">비밀번호가 빈칸입니다.</p>
           </div>
-          <button type="submit" class="btn btn-primary" id="sumbit-btn">
+          <button type="submit" class="btn btn-primary" id="submit-btn">
             전송
           </button>
           <button type="button" class="btn btn-primary btn-close">닫기</button>
@@ -83,9 +86,14 @@
     <!-- <input type="text" id="test-input" /> -->
 
     <script>
-      $("submit-btn").on("submit", function () {
-        if ($("#email").val() === "") {
-          console.log("ewafeaw");
+      $("form").on("submit", function (e) {
+        if ($("#email").val() == "") {
+          $("#email-alert").show();
+          e.preventDefault();
+        }
+        if ($("#psw").val() == "") {
+          $("#psw-alert").show();
+          e.preventDefault();
         }
       });
 

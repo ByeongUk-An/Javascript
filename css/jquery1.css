@@ -40,3 +40,11 @@
 .nav-list {
   display: none;
 }
+
+#email-alert {
+  display: none;
+}
+
+#psw-alert {
+  display: none;
+}
