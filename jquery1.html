@@ -24,7 +24,11 @@
     ></script>
   </head>
   <body>
-    <div class="black-background">
+    <div class="left-menu">
+      <p>Menu Title</p>
+    </div>
+
+    <div class="black-background slide-down">
       <div class="white-background">
         <p>로그인하세요</p>
         <form action="#" id="form-submit">
@@ -81,6 +85,9 @@
       <a class="btn btn-primary btn-lg" id="login" href="#" role="button"
         >Log In</a
       >
+      <a class="btn btn-danger btn-lg" id="show-menu" href="#" role="button"
+        >Show Menu</a
+      >
     </div>
 
     <!-- <input type="text" id="test-input" /> -->
@@ -99,7 +106,8 @@
 
       //   $(".black-background").fadeIn();
       $("#login").on("click", function () {
-        $(".black-background").fadeIn();
+        // $(".black-background").show().animate({ top: "0" }, 1000);
+        $(".black-background").addClass("slide-down");
       });
 
       $(".nav-products").click(function () {
@@ -107,6 +115,10 @@
       });
       $(".btn-close").click(function () {
         $(".black-background").hide();
+      });
+
+      $("#show-menu").click(function () {
+        $(".left-menu").animate({ margin: "0" });
       });
     </script>
 
