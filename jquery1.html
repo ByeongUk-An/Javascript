@@ -96,7 +96,7 @@
 
     <h4 class="my-4 text-center">Showcase</h4>
 
-    <div style="overflow: hidden">
+    <div style="overflow: hidden; position: relative">
       <div class="slide-container">
         <div class="slide-box">
           <img
@@ -114,6 +114,8 @@
           />
         </div>
       </div>
+      <button class="slide-prev">Prev</button>
+      <button class="slide-next">Next</button>
     </div>
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
@@ -124,13 +126,53 @@
     <script>
       // Carousel Slide
       $(".slide-1").click(function () {
-        $(".slide-container").css("transform", "translateX(-100vw)");
+        $(".slide-container").css("transform", "translateX(0vw)");
       });
       $(".slide-2").click(function () {
-        $(".slide-container").css("transform", "translateX(-200vw)");
+        $(".slide-container").css("transform", "translateX(-100vw)");
       });
       $(".slide-3").click(function () {
-        $(".slide-container").css("transform", "translateX(0vw)");
+        $(".slide-container").css("transform", "translateX(-200vw)");
+      });
+
+      // Carousel Slide next
+
+      let CurrentPicture = 1;
+      // let CurrentPicture2 = 2;
+      // let CurrentPicture3 = 3;
+
+      $(".slide-next").click(function () {
+        $(".slide-container").css(
+          "transform",
+          "translateX(-" + CurrentPicture + "00vw)"
+        );
+        CurrentPicture = CurrentPicture + 1;
+        if (CurrentPicture == 3) {
+          CurrentPicture = 0;
+        }
+
+        // if 문으로 개발
+        // if (CurrentPicture == 1) {
+        //   $(".slide-container").css("transform", "translateX(-100vw)");
+        //   CurrentPicture = CurrentPicture + 1;
+        // } else if (CurrentPicture == 2) {
+        //   $(".slide-container").css("transform", "translateX(-200vw)");
+        //   CurrentPicture = CurrentPicture + 1;
+        // } else if (CurrentPicture == 3) {
+        //   $(".slide-container").css("transform", "translateX(0vw)");
+        //   CurrentPicture = CurrentPicture + 1;
+        // }
+      });
+      // Carousel Slide prev
+      $(".slide-prev").click(function () {
+        $(".slide-container").css(
+          "transform",
+          "translateX(-" + (CurrentPicture - 2) + "00vw)"
+        );
+        CurrentPicture = CurrentPicture - 1;
+        if (CurrentPicture == 0) {
+          CurrentPicture - 3;
+        }
       });
 
       // /abc/.test("abcdacewaf");
