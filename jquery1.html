@@ -93,15 +93,32 @@
     <!-- <input type="text" id="test-input" /> -->
 
     <script>
+      // /abc/.test("abcdacewaf");
+
       $("form").on("submit", function (e) {
-        if ($("#email").val() == "") {
+        let email = $("#email").val();
+        let emailRule =
+          /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+        let password = $("#psw").val();
+        let passwordRule =
+          /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+
+        if (emailRule.test(email) == false && email == "") {
+          e.preventDefault();
           $("#email-alert").show();
+        } else if (passwordRule.test(password) == false && password == "") {
           e.preventDefault();
-        }
-        if ($("#psw").val() == "") {
           $("#psw-alert").show();
-          e.preventDefault();
         }
+
+        // if ($("#email").val() == "") {
+        //   $("#email-alert").show();
+        //   e.preventDefault();
+        // }
+        // if ($("#psw").val() == "") {
+        //   $("#psw-alert").show();
+        //   e.preventDefault();
+        // }
       });
 
       //   $(".black-background").fadeIn();
