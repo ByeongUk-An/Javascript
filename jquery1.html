@@ -163,15 +163,14 @@
         //   CurrentPicture = CurrentPicture + 1;
         // }
       });
-      // Carousel Slide prev
+      // Carousel Slide prev 미완성
       $(".slide-prev").click(function () {
         $(".slide-container").css(
           "transform",
           "translateX(-" + (CurrentPicture - 2) + "00vw)"
         );
-        CurrentPicture = CurrentPicture - 1;
-        if (CurrentPicture == 0) {
-          CurrentPicture - 3;
+        if (CurrentPicture > 1) {
+          CurrentPicture = CurrentPicture - 1;
         }
       });
 
