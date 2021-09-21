@@ -51,6 +51,9 @@
   justify-content: space-between;
   padding: 15px;
   align-items: center;
+  position: fixed;
+  color: #fff;
+  width: 100%;
 }
 
 .nav-list {
@@ -88,4 +91,9 @@
   position: absolute;
   top: 45%;
   left: 0;
+}
+
+.nav-black {
+  background-color: black;
+  color: #fff;
 }
