@@ -125,9 +125,9 @@
 
     <div class="container mt-5" style="margin-bottom: 500px">
       <ul class="list">
-        <li class="tab-button">Products</li>
-        <li class="tab-button">Information</li>
-        <li class="tab-button">Shipping</li>
+        <li class="tab-button" data-id="0">Products</li>
+        <li class="tab-button" data-id="1">Information</li>
+        <li class="tab-button" data-id="2">Shipping</li>
       </ul>
 
       <div class="tab-content">
@@ -248,6 +248,13 @@
 
       $("#show-menu").click(function () {
         $(".left-menu").animate({ margin: "0" });
+      });
+
+      $(".black-background").click(function (e) {
+        // console.log(e.currentTarget);
+        if (e.target == e.currentTarget) {
+          $(".black-background").hide();
+        }
       });
     </script>
 
