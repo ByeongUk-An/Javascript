@@ -35,18 +35,13 @@
       <div class="form-group">
         <p>상품선택</p>
         <select class="form-control" id="option1">
-          <option>모자</option>
           <option>셔츠</option>
+          <option>바지</option>
         </select>
 
         <div class="size-select">
           <p class="mt-4">사이즈 선택</p>
-          <select class="form-control" id="option2">
-            <option>95</option>
-            <option>100</option>
-            <option>105</option>
-            <option>110</option>
-          </select>
+          <select class="form-control" id="option2"></select>
         </div>
       </div>
     </form>
@@ -58,9 +53,16 @@
         .addEventListener("change", function (e) {
           console.log(e.target.value);
           if (e.target.value == "셔츠") {
-            $(".size-select").show();
-          } else {
-            $(".size-select").hide();
+            $("#option2").html("");
+            let templeate = `<option>100</option>
+            <option>105</option>
+            <option>110</option>`;
+
+            $("#option2").append(templeate);
+          } else if (e.target.value == "바지") {
+            $("#option2").html("");
+            let templeate1 = `<option>24</option><option>26</option><option>28</option>`;
+            $("#option2").append(templeate1);
           }
         });
     </script>
