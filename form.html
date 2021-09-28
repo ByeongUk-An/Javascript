@@ -48,23 +48,29 @@
 
     <script>
       // 어 저기 select 인풋에서 셔츠라는 값을 선택하면 밑에 ui를 보여줌
-      document
-        .getElementById("option1")
-        .addEventListener("change", function (e) {
-          console.log(e.target.value);
-          if (e.target.value == "셔츠") {
-            $("#option2").html("");
-            let templeate = `<option>100</option>
-            <option>105</option>
-            <option>110</option>`;
+      // document
+      //   .getElementById("option1")
+      //   .addEventListener("change", function (e) {
+      //     console.log(e.target.value);
+      //     if (e.target.value == "셔츠") {
+      //       $("#option2").html("");
+      //       let templeate = `<option>100</option>
+      //       <option>105</option>
+      //       <option>110</option>`;
 
+      //       $("#option2").append(templeate);
+      //     }
+      //   });
+      let size = [26, 28, 30, 32, 34, 36, 38, 40];
+      $("#option1").on("change", function () {
+        if ($("#option1").val() == "바지") {
+          size.forEach((element) => {
+            console.log(element);
+            let templeate = `<option>${element}</option>`;
             $("#option2").append(templeate);
-          } else if (e.target.value == "바지") {
-            $("#option2").html("");
-            let templeate1 = `<option>24</option><option>26</option><option>28</option>`;
-            $("#option2").append(templeate1);
-          }
-        });
+          });
+        }
+      });
     </script>
   </body>
 </html>
