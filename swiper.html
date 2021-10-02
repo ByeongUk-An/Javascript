@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiper</title>
+    <link
+      rel="stylesheet"
+      href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <style>
+      .swiper {
+        width: 900px;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .bx_group {
+        display: flex;
+        width: 750px;
+      }
+      .bx_group > div {
+        flex: 1;
+        height: 500px;
+
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        margin: 20px;
+      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        content: "";
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        background: none;
+        font-size: 52px;
+        width: 28px;
+        height: 52px;
+      }
+      .swiper-button-prev {
+        left: 0;
+      }
+      .swiper-button-next {
+        right: 15px;
+      }
+      .swiper-button-prev.swiper-button-disabled,
+      .swiper-button-next.swiper-button-disabled {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="bx_group">
+            <div>box1</div>
+            <div>box2</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-slide">
+            <div class="bx_group">
+              <div>box3</div>
+              <div>box4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev"><i class="xi-angle-left-thin"></i></div>
+      <div class="swiper-button-next"><i class="xi-angle-right-thin"></i></div>
+    </div>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
