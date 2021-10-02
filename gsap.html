@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gsap</title>
+    <style>
+      .box {
+        margin: 20px;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        position: relative;
+      }
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        position: absolute;
+        left: 0;
+      }
+      .box2 {
+        width: 200px;
+        height: 100px;
+        background: greenyellow;
+      }
+      .box3 {
+        width: 100px;
+        height: 200px;
+        background: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
+      integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let tween = document.querySelector(".box1");
+      gsap.to(tween, 5, { left: 800, duration: 1 });
+    </script>
+  </body>
+</html>
